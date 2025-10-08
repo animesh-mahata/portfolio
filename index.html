@@ -1,403 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Animesh Mahata</title>
-
-    <link rel="icon" href="./Assets/avataaars.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animesh Mahata - Java Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Animesh Mahata</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Animesh Mahata</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+    <!-- Navigation Bar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <div class="flex-shrink-0">
+            <a href="#" class="text-2xl font-bold accent-color"
+              >Animesh Mahata</a
+            >
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-4">
+              <a
+                href="#about"
+                class="text-gray-300 hover:accent-color px-3 py-2 rounded-md text-sm font-medium"
+                >About</a
+              >
+              <a
+                href="#skills"
+                class="text-gray-300 hover:accent-color px-3 py-2 rounded-md text-sm font-medium"
+                >Skills</a
+              >
+              <a
+                href="#projects"
+                class="text-gray-300 hover:accent-color px-3 py-2 rounded-md text-sm font-medium"
+                >Projects</a
+              >
+              <a
+                href="#education"
+                class="text-gray-300 hover:accent-color px-3 py-2 rounded-md text-sm font-medium"
+                >Education</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-300 hover:accent-color px-3 py-2 rounded-md text-sm font-medium"
+                >Contact</a
+              >
+              <a
+                href="./Assets/AnimeshMahata_Java_Dev.pdf"
+                download
+                class="btn btn-primary text-sm !py-2 !px-4"
+                >Download Resume</a
+              >
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i data-lucide="menu" class="block h-6 w-6"></i>
+              <i data-lucide="x" class="hidden h-6 w-6"></i>
+            </button>
+          </div>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./Assets/self.png" alt="Animesh Mahata profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello I'm</p>
-        <h1 class="title">Animesh Mahata</h1>
-        <p class="section__text__p2">Backend Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./Assets/AnimeshMahata_SpringBoot_Dev.pdf')"
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#about"
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >About</a
           >
-            Download Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-
-        <div id="social-container">
-          <a href="https://www.linkedin.com/in/animesh-mahata/" target="_blank"
-            ><img
-              src="./Assets/linkedin.png"
-              alt="My LinkedIn profile"
-              class="icon"
-          /></a>
-
-          <a href="https://github.com/animesh-mahata" target="_blank">
-            <img
-              src="./Assets/github.png"
-              alt="My Github profile"
-              class="icon"
-            />
-          </a>
-
-          <a href="https://leetcode.com/u/hackerTitan/" target="_blank"
-            ><img src="./Assets/leetcode.png" alt="LeetCode" class="icon"
-          /></a>
-          <!-- <img
-            src="./Assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href = 'https://www.linkedin.com/in/animesh-mahata/'"
-          /> -->
-          <!-- <img
-            src="./Assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href = 'https://github.com/animesh-mahata'"
-          /> -->
-          <!-- <img
-            src="./Assets/leetcode.png"
-            alt="My LeetCode profile"
-            class="icon"
-            onclick="location.href = 'https://leetcode.com/u/hackerTitan/'"
-          /> -->
+          <a
+            href="#skills"
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >Projects</a
+          >
+          <a
+            href="#education"
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >Education</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >Contact</a
+          >
+          <a
+            href="./AnimeshMahata_Java_Dev.pdf"
+            download
+            class="text-gray-300 hover:accent-color block px-3 py-2 rounded-md text-base font-medium"
+            >Download Resume</a
+          >
         </div>
       </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More.</p>
-      <h1 class="title">About Me</h1>
-      <div class="container">
-        <div class="section__pic-container">
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header
+      id="home"
+      class="section min-h-screen flex items-center bg-gray-900/50 pt-20"
+    >
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 text-center md:text-left"
+      >
+        <div class="md:order-2">
           <img
-            src="./Assets/about-pic.png"
-            alt="Profile pic"
-            class="about-pic"
+            src="./Assets/myImgw.jpg"
+            alt="Animesh Mahata"
+            class="rounded-full w-64 h-64 md:w-80 md:h-80 mx-auto border-4 border-amber-400 shadow-lg fade-in"
           />
         </div>
-        <div class="about-details-container">
-          <div class="about-container">
-            <div class="details-container">
-              <img
-                src="./Assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>1+ years hands-on <br />Backend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./Assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelor of Technology <br />Computer Science & Engineering</p>
-            </div>
-          </div>
-          <div class="text-container">
-            Computer Science graduate with hands-on experience in building
-            robust backend systems using Java, Python, Spring Boot, and
-            PostgreSQL. Strong grasp of object-oriented programming, RESTful
-            APIs, and secure CRUD operations. Enthusiastic about solving real-world problems and contributing to scalable enterprise applications.
-          </div>
-        </div>
-      </div>
-      <img
-        src="./Assets/arrow.png"
-        alt="Next section"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-container">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Backend Technologies</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./Assets/java.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/python.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/sql.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/spring-boot.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Spring Boot</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/postgresql.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/git.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Technologies</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./Assets/html.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/css.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./Assets/javascript.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
+        <div class="md:order-1">
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight fade-in"
+          >
+            Animesh Mahata
+          </h1>
+          <p
+            class="mt-4 text-lg md:text-xl text-gray-300 fade-in"
+            style="transition-delay: 100ms"
+          >
+            Java Developer specializing in
+            <span class="accent-color">Spring Boot</span> & Backend Systems
+          </p>
+          <div
+            class="mt-8 flex justify-center md:justify-start gap-4 fade-in"
+            style="transition-delay: 200ms"
+          >
+            <a
+              href="https://www.linkedin.com/in/animesh-mahata"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              >View LinkedIn</a
+            >
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
       </div>
-      <img
-        src="./Assets/arrow.png"
-        alt="Next section"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-container">
-          <div class="details-container color-container">
-            <div class="article-container">
+    </header>
+
+    <main>
+      <!-- About Me Section -->
+      <section id="about" class="section">
+        <div class="max-w-4xl mx-auto fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            About <span class="accent-color">Me</span>
+          </h2>
+          <div
+            class="text-center text-lg text-gray-300 leading-relaxed space-y-4"
+          >
+            <p>
+              Hello! I'm Animesh, a recent Computer Science graduate with a deep
+              passion for backend development. I thrive on the logic of building
+              robust, scalable systems and enjoy the challenge of solving
+              complex problems with clean, efficient code. My journey into
+              technology was driven by a curiosity to understand how things
+              work, which naturally led me to the world of software engineering.
+            </p>
+            <p>
+              As a developer, I have hands-on experience building robust backend
+              systems using Java, Spring Boot, and PostgreSQL. With a strong
+              grasp of object-oriented programming, RESTful APIs, and secure
+              CRUD operations, I'm enthusiastic about solving real-world
+              problems and contributing to scalable enterprise applications.
+            </p>
+            <p>
+              Beyond coding, I'm a firm believer in continuous learning. I'm
+              always exploring new technologies and frameworks to sharpen my
+              skills. I'm currently seeking a role where I can contribute to
+              meaningful projects, collaborate with a talented team, and grow as
+              a software developer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Technical Skills -->
+      <section id="skills" class="section bg-gray-900/50">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+            Technical <span class="accent-color">Skills</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card fade-in" style="transition-delay: 100ms">
+              <h3 class="text-xl font-semibold mb-4 accent-color">
+                Programming Languages
+              </h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-3">
+                  <i data-lucide="coffee" class="w-5 h-5 accent-color"></i>
+                  <span>Java</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/python/FBBF24"
+                    alt="Python logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Python</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="database" class="w-5 h-5 accent-color"></i>
+                  <span>SQL</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card fade-in" style="transition-delay: 200ms">
+              <h3 class="text-xl font-semibold mb-4 accent-color">
+                Frameworks & Tools
+              </h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/springboot/FBBF24"
+                    alt="Spring Boot logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Spring Boot</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="file-code-2" class="w-5 h-5 accent-color"></i>
+                  <span>JPA</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="test-tube-2" class="w-5 h-5 accent-color"></i>
+                  <span>Mockito</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/git/FBBF24"
+                    alt="Git logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Git & GitHub</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card fade-in" style="transition-delay: 300ms">
+              <h3 class="text-xl font-semibold mb-4 accent-color">
+                Database & Web
+              </h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/postgresql/FBBF24"
+                    alt="PostgreSQL logo"
+                    class="w-5 h-5"
+                  />
+                  <span>PostgreSQL</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/html5/FBBF24"
+                    alt="HTML5 logo"
+                    class="w-5 h-5"
+                  />
+                  <span>HTML, CSS</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/javascript/FBBF24"
+                    alt="JavaScript logo"
+                    class="w-5 h-5"
+                  />
+                  <span>JavaScript</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card fade-in" style="transition-delay: 400ms">
+              <h3 class="text-xl font-semibold mb-4 accent-color">
+                Development Tools
+              </h3>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/intellijidea/FBBF24"
+                    alt="IntelliJ IDEA logo"
+                    class="w-5 h-5"
+                  />
+                  <span>IntelliJ IDEA</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/postman/FBBF24"
+                    alt="Postman logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Postman</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/apachemaven/FBBF24"
+                    alt="Maven logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Maven</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <img
+                    src="https://cdn.simpleicons.org/swagger/FBBF24"
+                    alt="Swagger logo"
+                    class="w-5 h-5"
+                  />
+                  <span>Swagger</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-8 card fade-in" style="transition-delay: 500ms">
+            <h3 class="text-xl font-semibold mb-4 text-center accent-color">
+              Core Concepts
+            </h3>
+            <div class="flex flex-wrap justify-center gap-4">
+              <span class="tag">RESTful APIs</span
+              ><span class="tag">Object-Oriented Programming</span
+              ><span class="tag">Data Structures & Algorithms</span>
+              <span class="tag">JWT Authentication</span
+              ><span class="tag">CRUD Operations</span
+              ><span class="tag">Unit Testing</span>
+              <span class="tag">Serverless Computing</span>
+              <span class="tag">Dependency Injection</span>
+              <span class="tag">Version Control</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Internship Experience -->
+      <section id="experience" class="section">
+        <div class="max-w-4xl mx-auto fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            Internship <span class="accent-color">Experience</span>
+          </h2>
+          <div class="card">
+            <div
+              class="flex flex-col sm:flex-row justify-between sm:items-start"
+            >
+              <div>
+                <h3 class="text-2xl font-semibold accent-color">
+                  Full Stack Intern
+                </h3>
+                <p class="text-lg font-medium text-white">OneON</p>
+                <p class="text-gray-400">Bengaluru, Karnataka, India</p>
+              </div>
+              <p class="text-gray-400 font-medium mt-2 sm:mt-0">
+                July 2024 - Aug 2024
+              </p>
+            </div>
+            <ul class="mt-6 space-y-3 list-disc list-inside text-gray-300">
+              <li>
+                Automated deletion of AWS S3 backups to reduce storage costs and
+                ensure compliance.
+              </li>
+              <li>
+                Built and optimized microservices using AWS Lambda for
+                serverless computing, reducing costs and improving scalability.
+              </li>
+              <li>
+                Analyzed and optimized SQL queries, boosting database
+                efficiency.
+              </li>
+              <li>
+                Collaborated with front-end developers to improve API
+                integrations.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Projects -->
+      <section id="projects" class="section bg-gray-900/50">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+            Personal <span class="accent-color">Projects</span>
+          </h2>
+          <div
+            class="grid grid-flow-col auto-cols-[90%] sm:auto-cols-[24rem] gap-8 overflow-x-auto pb-4 project-scroller"
+          >
+            <div
+              class="card flex flex-col h-full fade-in"
+              style="transition-delay: 100ms"
+            >
               <img
                 src="./Assets/fas-proj.png"
-                alt="Project 2"
-                class="project-img"
+                alt="FaceCount Project"
+                class="rounded-lg mb-6"
               />
+              <h3 class="text-2xl font-semibold mb-2">FaceCount</h3>
+              <p class="text-lg accent-color mb-4">
+                Attendance Management via Face Recognition
+              </p>
+              <p class="text-gray-300 flex-grow">
+                Engineered a secure backend using Spring Boot, featuring RESTful
+                APIs with JWT-based authentication for role-based access.
+                Integrated a Python facial recognition module for automated,
+                real-time attendance tracking.
+              </p>
+              <div class="mt-6">
+                <h4 class="font-semibold mb-3">Tech Stack:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag">Java</span
+                  ><span class="tag">Spring Security</span
+                  ><span class="tag">PostgreSQL</span
+                  ><span class="tag">Python</span><span class="tag">Dlib</span>
+                </div>
+              </div>
+              <div class="mt-auto pt-6">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-secondary w-full flex items-center justify-center gap-2"
+                  ><i data-lucide="github" class="w-4 h-4"></i> GitHub</a
+                >
+              </div>
             </div>
-            <h2 class="experience-sub-title project-title">
-              FaceCount - A Face Recognition Based Attendance System
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/animesh-mahata/FaceCount-Backend', '_blank')"
-              >
-                GitHub
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/animesh-mahata/FaceCount-Backend'"
-              >
-                Demo
-              </button> -->
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
+            <div
+              class="card flex flex-col h-full fade-in"
+              style="transition-delay: 200ms"
+            >
               <img
                 src="./Assets/price-trac-proj.png"
-                alt="Project 2"
-                class="project-img"
+                alt="Price Tracker Project"
+                class="rounded-lg mb-6"
               />
+              <h3 class="text-2xl font-semibold mb-2">Price Tracker</h3>
+              <p class="text-lg accent-color mb-4">
+                E-commerce Price Scraping Service
+              </p>
+              <p class="text-gray-300 flex-grow">
+                Built a backend service to scrape product prices from e-commerce
+                sites and serve the data via a RESTful API. Implemented
+                scheduled jobs with Spring to ensure data remained up-to-date.
+              </p>
+              <div class="mt-6">
+                <h4 class="font-semibold mb-3">Tech Stack:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag">Java</span
+                  ><span class="tag">Spring Boot</span
+                  ><span class="tag">PostgreSQL</span
+                  ><span class="tag">Jsoup</span><span class="tag">Maven</span>
+                </div>
+              </div>
+              <div class="mt-auto pt-6">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-secondary w-full flex items-center justify-center gap-2"
+                  ><i data-lucide="github" class="w-4 h-4"></i> GitHub</a
+                >
+              </div>
             </div>
-            <h2 class="experience-sub-title project-title">
-              Price Tracker
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/animesh-mahata/Price-Tracker', '_blank')"
-              >
-                GitHub
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/animesh-mahata/FaceCount-Backend'"
-              >
-                Demo
-              </button> -->
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
+            <div
+              class="card flex flex-col h-full fade-in"
+              style="transition-delay: 300ms"
+            >
               <img
                 src="./Assets/finance-proj.png"
-                alt="Project 1"
-                class="project-img"
+                alt="Expense Tracker Project"
+                class="rounded-lg mb-6"
               />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              Personal Expense Tracker
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/animesh-mahata/Personal-Expense-Tracker', '_blank')"
-              >
-                GitHub
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://youtu.be/1C-lwwLf2Yc', '_blank')"
-              >
-                Demo
-              </button>
+              <h3 class="text-2xl font-semibold mb-2">Expense Tracker</h3>
+              <p class="text-lg accent-color mb-4">
+                Full-Stack Expense Management Application
+              </p>
+              <p class="text-gray-300 flex-grow">
+                Developed a full-stack application using Spring Boot to manage
+                personal expenses. The system features JWT-based authentication,
+                a complete set of CRUD operations, and a modern web UI with
+                Chart.js for data visualization.
+              </p>
+              <div class="mt-6">
+                <h4 class="font-semibold mb-3">Tech Stack:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag">Java</span
+                  ><span class="tag">Spring Boot</span
+                  ><span class="tag">Spring Security</span
+                  ><span class="tag">JPA</span><span class="tag">H2/SQL</span
+                  ><span class="tag">Swagger</span
+                  ><span class="tag">Chart.js</span>
+                </div>
+              </div>
+              <div class="mt-auto pt-6">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-secondary w-full flex items-center justify-center gap-2"
+                  ><i data-lucide="github" class="w-4 h-4"></i> GitHub</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <img
-        src="./Assets/arrow.png"
-        alt="Next section"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./Assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:manimesh12.10@gmail.com">manimesh12.10@gmail.com</a>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section bg-gray-900/50">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fade-in">
+            <span class="accent-color">Education</span> Journey
+          </h2>
+          <div class="grid grid-cols-1 gap-8">
+            <div class="card p-6 fade-in" style="transition-delay: 100ms">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <span
+                    class="inline-flex justify-center items-center w-10 h-10 rounded-full bg-gray-700"
+                    ><i
+                      data-lucide="graduation-cap"
+                      class="w-5 h-5 accent-color"
+                    ></i
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-white">
+                    Mallabhum Institute of Technology
+                  </h3>
+                  <p class="text-gray-300">
+                    B.Tech, Computer Science & Engineering
+                  </p>
+                  <p class="text-sm accent-color">CGPA: 7.92</p>
+                  <time class="text-sm text-gray-400">Batch of 2025</time>
+                </div>
+              </div>
+            </div>
+            <div class="card p-6 fade-in" style="transition-delay: 200ms">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <span
+                    class="inline-flex justify-center items-center w-10 h-10 rounded-full bg-gray-700"
+                    ><i data-lucide="school-2" class="w-5 h-5 accent-color"></i
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-white">
+                    The Assembly of God Church School, Purulia
+                  </h3>
+                  <p class="text-gray-300">Higher Secondary, Science</p>
+                  <p class="text-sm accent-color">Percentage: 80%</p>
+                  <time class="text-sm text-gray-400">Batch of 2021</time>
+                </div>
+              </div>
+            </div>
+            <div class="card p-6 fade-in" style="transition-delay: 300ms">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <span
+                    class="inline-flex justify-center items-center w-10 h-10 rounded-full bg-gray-700"
+                    ><i data-lucide="school" class="w-5 h-5 accent-color"></i
+                  ></span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg text-white">
+                    Madhusudan Public School, Chakradharpur
+                  </h3>
+                  <p class="text-gray-300">Secondary</p>
+                  <p class="text-sm accent-color">Percentage: 83.4%</p>
+                  <time class="text-sm text-gray-400">Batch of 2019</time>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <footer id="contact" class="section">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold">
+            Connect with <span class="accent-color">Animesh</span>
+          </h2>
+          <p class="mt-4 text-lg text-gray-300">
+            I am always open to discussing new opportunities and collaborations.
           </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./Assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p>
-            <a href="https://www.linkedin.com/in/animesh-mahata">LinkedIn</a>
+          <p class="mt-2 text-md text-gray-400">
+            Based in Purulia, West Bengal, India
           </p>
+          <div class="mt-8 space-y-6">
+            <div
+              class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-lg"
+            >
+              <a
+                href="mailto:manimesh12.10@gmail.com"
+                class="flex items-center gap-3 text-gray-300 hover:accent-color transition-colors duration-300"
+                ><i data-lucide="mail" class="w-6 h-6"></i
+                ><span>manimesh12.10@gmail.com</span></a
+              >
+              <a
+                href="tel:9064120838"
+                class="flex items-center gap-3 text-gray-300 hover:accent-color transition-colors duration-300"
+                ><i data-lucide="phone" class="w-6 h-6"></i
+                ><span>9064120838</span></a
+              >
+            </div>
+            <div class="flex justify-center items-center gap-8 pt-4">
+              <a
+                href="https://www.linkedin.com/in/animesh-mahata"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:accent-color transition-colors duration-300"
+                ><i data-lucide="linkedin" class="w-8 h-8"></i
+                ><span class="sr-only">LinkedIn</span></a
+              >
+              <a
+                href="https://github.com/animesh-mahata"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:accent-color transition-colors duration-300"
+                ><i data-lucide="github" class="w-8 h-8"></i
+                ><span class="sr-only">GitHub</span></a
+              >
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <div
+          class="mt-12 text-center text-gray-500 border-t border-gray-700 pt-8"
+        >
+          <p>&copy; 2025 Animesh Mahata. All rights reserved.</p>
         </div>
-      </nav>
-      <p>Copyright &#169; 2025 Animesh Mahata. All Rights Reserved</p>
-    </footer>
+      </footer>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
